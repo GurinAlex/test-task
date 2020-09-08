@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vocabulary</title>
+
+    <!-- Import fonts from Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+    <div class="alert alert-success">
+        Успешно изменено!
+    </div>
+
+    <div class="alert alert-danger">
+        Успешно удалено!
+    </div>
+
+    <header class="header">
+        <h1>Тестовое задание "Справочник"</h1>
+    </header>
+
+    <nav class="navigation">
+        <ul class="navigation-sections">
+            <li class="navigation-sections__item active">Профессии</li>
+            <li class="navigation-sections__item">Отделы</li>
+            <li class="navigation-sections__item">Сотрудники</li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="profession visible">
+            <div class="profession-form">
+                <div class="profession-form__title">
+                    Добавить сущность
+                </div>
+
+                <form id="formProfession">
+                    <div class="form-group">
+                        <label for="professionName">Наименование</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="professionName"
+                                required
+                                minlength="1"
+                                maxlength="256"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="professionDescription">Описание</label>
+                        <textarea
+                                class="form-control"
+                                id="professionDescription"
+                                rows="4"
+                                required
+                                minlength="1"
+                                maxlength="512"
+                        ></textarea>
+                    </div>
+
+                    <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="submitProfession"
+                    >
+                        Добавить
+                    </button>
+                </form>
+            </div>
+
+            <hr/>
+
+            <div class="profession-list">
+                <div class="profession-list__title">
+                    Список
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="department">
+            <div class="department-form">
+                <div class="department-form__title">
+                    Добавить сущность
+                </div>
+
+                <form id="formDepartment">
+                    <div class="form-group">
+                        <label for="departmentName">Наименование</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="departmentName"
+                                required
+                                minlength="1"
+                                maxlength="256"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="departmentParent">Родительский отдел(при наличии)</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="departmentParent"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="departmentDescription">Описание</label>
+                        <textarea
+                                class="form-control"
+                                id="departmentDescription"
+                                rows="4"
+                                required
+                                minlength="1"
+                                maxlength="512"
+                        ></textarea>
+                    </div>
+
+                    <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="submitDepartment"
+                    >
+                        Добавить
+                    </button>
+                </form>
+            </div>
+
+            <hr/>
+
+            <div class="department-list">
+                <div class="department-list__title">
+                    Список
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="staff">
+            <div class="staff-form">
+                <div class="staff-form__title">
+                    Добавить сущность
+                </div>
+
+                <form id="formStaff">
+                    <div class="form-group">
+                        <label for="staffFIO">ФИО</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="staffFIO"
+                                required
+                                minlength="1"
+                                maxlength="256"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staffProfession">Профессия</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="staffProfession"
+                                required
+                                minlength="1"
+                                maxlength="256"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staffDepartment">Отдел</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="staffDepartment"
+                                required
+                                minlength="1"
+                                maxlength="256"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staffDescription">Описание</label>
+                        <textarea
+                                class="form-control"
+                                id="staffDescription"
+                                rows="4"
+                                required
+                                minlength="1"
+                                maxlength="512"
+                        ></textarea>
+                    </div>
+
+                    <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="submitStaff"
+                    >
+                        Добавить
+                    </button>
+                </form>
+            </div>
+
+            <hr/>
+
+            <div class="staff-list">
+                <div class="staff-list__title">
+                    Список
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+</html>

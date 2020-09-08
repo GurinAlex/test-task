@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+// == Mixins == //
+@mixin font-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+@mixin font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@mixin title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 10px 10px 30px 20px;
+}
+
+@mixin list-styles {
+  &-form {
+
+    &__title {
+      @include font-montserrat;
+      @include title;
+    }
+  }
+
+  hr {
+    margin-top: 40px;
+  }
+
+  &-list {
+    padding: 30px 0;
+
+    &__title, .staff-list__title {
+      @include font-montserrat;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px 10px 30px 20px;
+    }
+
+    &__item {
+      min-height: 200px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 2rem;
+
+      form {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        input, textarea {
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid darkgrey;
+          transition: .3s;
+
+          &:focus {
+            border-bottom: 2px solid cornflowerblue;
+          }
+        }
+      }
+
+      .wrapper {
+        @include wrapper;
+      }
+
+      .btn {
+        width: 50%;
+
+        button {
+          margin-bottom: 20px;
+        }
+      }
+
+      .form-group {
+        padding-bottom: 20px;
+        width: 100%;
+      }
+    }
+  }
+}
+// !== Mixins == //
+
+.header {
+  padding: 20px 0 0 0;
+
+  h1 {
+    @include font-lato;
+    font-weight: bold;
+  }
+}
+
+.active {
+  color: red;
+}
+
+.navigation {
+  padding: 40px 20px;
+
+  &-sections {
+    display: flex;
+    list-style: none;
+
+    &__item {
+      transition: .3s;
+
+
+      &:hover {
+        cursor: pointer;
+        color: red;
+      }
+
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+.profession {
+  display: none;
+}
+
+.department {
+  display: none;
+}
+
+.staff {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.form-control {
+  resize: none;
+}
+
+.profession {
+  @include list-styles;
+}
+
+.staff {
+ @include list-styles;
+}
+
+.department {
+  @include list-styles;
+}
+
+.alert {
+  display: none;
+}
+
+.alert-vision {
+  display: block;
+  position: fixed;
+  top: 50px;
+  right: 80px;
+}
+
+.error {
+  border: 1px solid #d22b2b;
+}
